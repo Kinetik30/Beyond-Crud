@@ -22,8 +22,12 @@ async def get_all_book():
     return books
 
 @app.post('/books')
-async def create_book():
-    pass
+async def create_book(book_data:Book):
+    new_book=book_data.model_dump()
+    books.append(new_book)
+    return new_book
+
+    
 
 @app.get('/book/{book_id}')
 async def get_book_byid(book_id:int):
