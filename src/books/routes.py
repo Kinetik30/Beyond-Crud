@@ -13,7 +13,7 @@ async def get_all_book():
 @book_router.post('/')
 async def create_book(book_data:Book):
     new_book=book_data.model_dump()
-    books.book_routerend(new_book)
+    books.append(new_book)
     return new_book
 
    
